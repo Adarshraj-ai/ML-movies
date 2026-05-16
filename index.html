@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMatch | Premium Movie Recommendations</title>
+    <meta name="description" content="Premium movie recommendations powered by Machine Learning.">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Outfit:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-overlay"></div>
+
+    <header class="sticky-header">
+        <div class="container header-content">
+            <div class="logo">Cine<span>Match</span> 🍿</div>
+            <div class="header-search">
+                <input type="text" id="movieSearch" placeholder="Search for a movie..." autocomplete="off">
+                <button id="searchBtn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg></button>
+            </div>
+            <nav class="desktop-nav">
+                <a href="#" class="active">Home</a>
+                <a href="#stats">Stats</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-minimal">
+            <div class="container">
+                <div class="genre-pills">
+                    <button class="pill active">All</button>
+                    <button class="pill">Action</button>
+                    <button class="pill">Comedy</button>
+                    <button class="pill">Drama</button>
+                    <button class="pill">Sci-Fi</button>
+                    <button class="pill">Horror</button>
+                    <button class="pill">Romance</button>
+                    <button class="pill">Animation</button>
+                </div>
+            </div>
+        </section>
+
+        <div id="loader" class="loader hidden"></div>
+
+        <section id="results" class="results-section container">
+            <div class="section-header">
+                <h2 id="resultTitle">Trending Recommendations</h2>
+            </div>
+            <div id="movieGrid" class="movie-grid">
+                <!-- Movie cards will be injected here -->
+                <div class="movie-card skeleton"></div>
+                <div class="movie-card skeleton"></div>
+                <div class="movie-card skeleton"></div>
+                <div class="movie-card skeleton"></div>
+                <div class="movie-card skeleton"></div>
+            </div>
+        </section>
+
+        <section id="stats" class="stats-section container">
+            <div class="glass-container">
+                <h2>CineMatch Engine Stats</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">45K+</div>
+                        <div class="stat-label">Movies Analyzed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">0.8s</div>
+                        <div class="stat-label">Average Response Time</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">98%</div>
+                        <div class="stat-label">Matching Accuracy</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 CineMatch. Powered by FastAPI & Scikit-Learn.</p>
+        </div>
+    </footer>
+
+    <div id="movieDetailsModal" class="details-modal-overlay hidden">
+        <div class="details-modal">
+            <button id="closeModal" class="close-modal">&times;</button>
+            <div id="modalContent">
+                <!-- Content will be injected by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
